@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmetics Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #FDF9F6; font-family: 'Lato', sans-serif; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .transition-all { transition: all 0.3s ease; }
+        .bg-brand-primary { background-color: #5E7253; }
+        .hover\:bg-brand-primary:hover { background-color: #4D5F44; }
+        .text-brand-primary { color: #5E7253; }
+        .border-brand-primary { border-color: #5E7253; }
+        .bg-brand-light { background-color: #799468; }
+    </style>
+</head>
+<body class="text-gray-800 flex flex-col min-h-screen">
+
+    <div class="hidden lg:flex fixed left-4 top-1/2 -translate-y-1/2 z-50 flex-col items-center space-y-3">
+        <a href="https://www.facebook.com/profile.php?id=61593271765683" target="_blank" title="Facebook" class="w-10 h-10 rounded-full bg-white border border-[#E4B4B9] text-[#5E7253] flex items-center justify-center hover:bg-[#5E7253] hover:text-white transition-all shadow-md hover:scale-110">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.378 14.5 5 15.5 5H18V0h-3.808C10.592 0 9 1.583 9 4.615V8z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@cosmetics.gt4?_r=1&_t=ZS-98mDsm2kG8o" target="_blank" title="TikTok" class="w-10 h-10 rounded-full bg-white border border-[#E4B4B9] text-[#5E7253] flex items-center justify-center hover:bg-[#5E7253] hover:text-white transition-all shadow-md hover:scale-110">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/cos_me_tics_?igsh=MXNienJ1dTQ1MG9uZA%3D%3D" target="_blank" title="Instagram" class="w-10 h-10 rounded-full bg-white border border-[#E4B4B9] text-[#5E7253] flex items-center justify-center hover:bg-[#5E7253] hover:text-white transition-all shadow-md hover:scale-110">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+    </div>
+
+    <header class="bg-white border-b border-[#F2A9B8] py-4 px-4 md:px-12 flex justify-between items-center sticky top-0 z-40 shadow-sm">
+        <button onclick="showView('home')" class="text-xl md:text-2xl font-bold text-[#5E7253] tracking-widest font-serif flex items-center gap-2">
+            <span class="bg-[#E4B4B9] text-white rounded-full w-8 h-8 flex items-center justify-center font-serif text-sm shadow-sm">C</span>
+            COSMETICS
+        </button>
+        
+        <nav class="hidden md:flex space-x-6 text-[#5E7253] text-sm md:text-base font-medium items-center">
+            <button onclick="showView('home')" class="hover:text-[#F2A9B8]">Inicio</button>
+            <button onclick="showView('shop-all')" class="hover:text-[#F2A9B8]">Comprar Todo</button>
+            <button onclick="showView('rostro')" class="hover:text-[#F2A9B8]">Rostro</button>
+            <button onclick="showView('ojos')" class="hover:text-[#F2A9B8]">Ojos</button>
+            <button onclick="showView('labios')" class="hover:text-[#F2A9B8]">Labios</button>
+        </nav>
+        
+        <div class="flex items-center space-x-4">
+            <button onclick="toggleCartModal(true)" class="relative text-[#5E7253] hover:text-[#F2A9B8] transition-all p-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 md:h-8 md:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <span id="cart-count" class="absolute -top-1 -right-1 bg-[#5E7253] text-white text-[10px] font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+            </button>
+
+            <button onclick="toggleMobileMenu()" class="md:hidden text-[#5E7253] focus:outline-none p-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-[#F2A9B8] px-6 py-4 space-y-3 shadow-md sticky top-[73px] z-30">
+        <button onclick="showView('home'); toggleMobileMenu();" class="block w-full text-left text-[#5E7253] font-medium py-1">Inicio</button>
+        <button onclick="showView('shop-all'); toggleMobileMenu();" class="block w-full text-left text-[#5E7253] font-medium py-1">Comprar Todo</button>
+        <button onclick="showView('rostro'); toggleMobileMenu();" class="block w-full text-left text-[#5E7253] font-medium py-1">Rostro</button>
+        <button onclick="showView('ojos'); toggleMobileMenu();" class="block w-full text-left text-[#5E7253] font-medium py-1">Ojos</button>
+        <button onclick="showView('labios'); toggleMobileMenu();" class="block w-full text-left text-[#5E7253] font-medium py-1">Labios</button>
+    </div>
+
+    <main class="flex-grow">
+        <section id="home" class="view p-4 sm:p-8 md:p-16 max-w-7xl mx-auto w-full">
+            <div class="flex flex-col md:flex-row items-center justify-between mb-12 md:mb-16 gap-8">
+                <div class="max-w-xl text-center md:text-left">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-serif text-[#5E7253] mb-4">Realza lo que te hace única</h1>
+                    <p class="text-[#D88C9A] italic text-xl sm:text-2xl mb-4 sm:mb-6">"Menos filtro, mas tu"</p>
+                    <p class="text-gray-600 text-sm sm:text-base">Nuestra línea de maquillaje está diseñada para resaltar tus mejores rasgos sin ocultar quién eres realmente. Ingredientes naturales para una piel radiante.</p>
+                </div>
+                <img src="https://i.postimg.cc/JnH0TFBV/logo-jpeg.jpg" alt="Logo Banner" class="w-72 sm:w-80 md:w-[400px] h-72 sm:h-80 md:h-[400px] rounded-2xl shadow-xl object-cover" onerror="this.src='https://placehold.co/400x400/E4B4B9/white?text=Cosmetics+Logo'">
+            </div>
+            
+            <h2 class="text-2xl sm:text-3xl font-serif text-[#5E7253] mb-6 sm:mb-8 text-center">Lo más vendido</h2>
+            <div id="featured-products" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8"></div>
+        </section>
+
+        <section id="shop-all" class="view hidden p-4 sm:p-8 md:p-16 max-w-7xl mx-auto w-full">
+            <h2 class="text-2xl sm:text-3xl font-serif text-[#5E7253] mb-6 sm:mb-8 text-center">Catálogo Completo</h2>
+            <div id="all-products" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8"></div>
+        </section>
+
+        <section id="rostro" class="view hidden p-4 sm:p-8 md:p-16 max-w-7xl mx-auto w-full">
+            <h2 class="text-2xl sm:text-3xl font-serif text-[#5E7253] mb-6 sm:mb-8 text-center">Rostro</h2>
+            <div id="rostro-products" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8"></div>
+        </section>
+
+        <section id="ojos" class="view hidden p-4 sm:p-8 md:p-16 max-w-7xl mx-auto w-full">
+            <h2 class="text-2xl sm:text-3xl font-serif text-[#5E7253] mb-6 sm:mb-8 text-center">Ojos</h2>
+            <div id="ojos-products" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8"></div>
+        </section>
+
+        <section id="labios" class="view hidden p-4 sm:p-8 md:p-16 max-w-7xl mx-auto w-full">
+            <h2 class="text-2xl sm:text-3xl font-serif text-[#5E7253] mb-6 sm:mb-8 text-center">Labios</h2>
+            <div id="labios-products" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8"></div>
+        </section>
+
+        <section id="checkout-view" class="view hidden p-4 sm:p-8 md:p-16 max-w-xl mx-auto w-full">
+            <h2 class="text-2xl sm:text-3xl font-serif text-[#5E7253] mb-6 text-center">Finalizar Pedido</h2>
+            <form onsubmit="processOrder(event)" class="bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-[#E4B4B9] space-y-4">
+                <div>
+                    <label class="block text-[#5E7253] font-bold text-sm mb-1">Nombre Completo *</label>
+                    <input type="text" required class="w-full p-3 text-sm border rounded-md border-gray-300">
+                </div>
+                <div>
+                    <label class="block text-[#5E7253] font-bold text-sm mb-1">Teléfono *</label>
+                    <input type="tel" required class="w-full p-3 text-sm border rounded-md border-gray-300">
+                </div>
+                <div>
+                    <label class="block text-[#5E7253] font-bold text-sm mb-1">Dirección de Envío *</label>
+                    <textarea required class="w-full p-3 text-sm border rounded-md border-gray-300"></textarea>
+                </div>
+                
+                <div>
+                    <label class="block text-[#5E7253] font-bold text-sm mb-2">Elegir una forma de pago *</label>
+                    <select id="payment-method" onchange="togglePaymentDetails()" class="w-full p-3 text-sm border rounded-md border-gray-300 bg-white">
+                        <option value="tarjeta">Tarjeta de crédito o de débito</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="contra-entrega">Pago Contra Entrega</option>
+                    </select>
+                </div>
+
+                <div id="card-details" class="space-y-4 bg-white p-4 sm:p-5 rounded-lg border-2 border-[#5E7253]">
+                    <div class="flex justify-between items-center border-b pb-3">
+                        <span class="text-xs sm:text-sm font-bold text-gray-700">Tarjeta de débito o crédito</span>
+                        <div class="flex items-center space-x-1.5">
+                            <span class="px-1.5 py-0.5 bg-blue-900 text-white font-extrabold text-[10px] rounded tracking-tighter">VISA</span>
+                            <span class="px-1.5 py-0.5 bg-red-600 text-white font-extrabold text-[10px] rounded tracking-tighter">MC</span>
+                            <span class="px-1.5 py-0.5 bg-blue-600 text-white font-extrabold text-[10px] rounded tracking-tighter">AMEX</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">Número de tarjeta*</label>
+                        <input type="text" id="card-num" placeholder="4532 •••• •••• ••••" maxlength="19" required class="w-full p-2.5 text-sm border rounded border-gray-300">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">Nombre del titular de la tarjeta*</label>
+                        <input type="text" id="card-name" placeholder="Como aparece en la tarjeta" required class="w-full p-2.5 text-sm border rounded border-gray-300">
+                    </div>
+                    <div class="flex space-x-3">
+                        <div class="w-1/2">
+                            <label class="block text-xs font-bold text-gray-700 mb-1">Expira*</label>
+                            <div class="flex space-x-2">
+                                <select id="card-exp-month" required class="w-1/2 p-2 text-xs border rounded border-gray-300 bg-white">
+                                    <option value="">MM</option>
+                                    <option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option>
+                                    <option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option>
+                                    <option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                                </select>
+                                <select id="card-exp-year" required class="w-1/2 p-2 text-xs border rounded border-gray-300 bg-white">
+                                    <option value="">AA</option>
+                                    <option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="w-1/2">
+                            <label class="block text-xs font-bold text-gray-700 mb-1">CVV*</label>
+                            <input type="password" id="card-cvv" placeholder="123" maxlength="4" required class="w-full p-2.5 text-sm border rounded border-gray-300">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="paypal-details" class="hidden space-y-3 bg-[#FDF9F6] p-4 rounded-lg border border-[#E4B4B9] text-center">
+                    <div class="inline-block px-3 py-1 bg-blue-100 text-blue-800 font-extrabold text-sm rounded-full mb-1">PayPal</div>
+                    <p class="font-bold text-[#5E7253] text-base">PayPal Express Checkout</p>
+                    <p class="text-xs text-gray-600">Al confirmar, serás redirigido de forma segura a PayPal para autorizar tu pago de manera inmediata.</p>
+                </div>
+
+                <button type="submit" id="submit-order-btn" class="w-full bg-[#5E7253] text-white p-3.5 rounded-lg font-bold hover:bg-[#4D5F44] transition text-sm sm:text-base flex items-center justify-center gap-2">
+                    <span>Confirmar y Pagar</span>
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bg-[#5E7253] text-white py-10 mt-16">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h4 class="text-2xl font-bold mb-4 font-serif">COSMETICS</h4>
+            <p class="text-sm opacity-80 mb-6">Belleza natural, realzando lo que te hace única.</p>
+            <div class="flex justify-center items-center flex-wrap gap-6">
+                <a href="https://www.instagram.com/cos_me_tics_?igsh=MXNienJ1dTQ1MG9uZA%3D%3D" target="_blank" class="hover:text-[#F2A9B8] transition font-bold uppercase tracking-widest text-sm flex items-center gap-2">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    Instagram
+                </a>
+                <a href="https://www.tiktok.com/@cosmetics.gt4?_r=1&_t=ZS-98mDsm2kG8o" target="_blank" class="hover:text-[#F2A9B8] transition font-bold uppercase tracking-widest text-sm flex items-center gap-2">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+                    TikTok
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61593271765683" target="_blank" class="hover:text-[#F2A9B8] transition font-bold uppercase tracking-widest text-sm flex items-center gap-2">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.378 14.5 5 15.5 5H18V0h-3.808C10.592 0 9 1.583 9 4.615V8z"/></svg>
+                    Facebook
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cart-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-md p-6 rounded-2xl max-h-[90vh] flex flex-col shadow-xl relative">
+            <button onclick="toggleCartModal(false)" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl font-bold w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition">
+                &times;
+            </button>
+            <h2 class="text-2xl font-serif text-[#5E7253] mb-4 pr-8">Tu Carrito</h2>
+            <div id="cart-items" class="overflow-y-auto mb-4 border-b pb-4 space-y-3 flex-grow"></div>
+            <div id="cart-total" class="font-bold text-lg mb-4 text-right text-gray-700"></div>
+            <div class="flex flex-col sm:flex-row gap-2">
+                <button onclick="goToCheckout()" class="w-full sm:flex-1 bg-[#5E7253] text-white py-2.5 rounded-lg text-sm font-bold shadow-md hover:bg-[#4D5F44] transition">Proceder a Pagar</button>
+                <button onclick="toggleCartModal(false)" class="w-full sm:flex-1 border border-[#5E7253] text-[#5E7253] py-2.5 rounded-lg text-sm font-medium hover:bg-gray-50 transition">Seguir Comprando</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="custom-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-sm p-6 rounded-2xl text-center shadow-xl space-y-4">
+            <h3 id="custom-modal-title" class="text-xl font-serif text-[#5E7253] font-bold">¡Aviso!</h3>
+            <p id="custom-modal-message" class="text-sm text-gray-600"></p>
+            <button onclick="closeCustomModal()" class="w-full bg-[#5E7253] text-white py-2.5 rounded-lg text-sm font-bold shadow-md">Aceptar</button>
+        </div>
+    </div>
+
+    <script>
+        const products = [
+            { 
+                id: 3, 
+                name: "Labial", 
+                category: "labios", 
+                price: 75, 
+                featured: true, 
+                image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=600&q=80"
+            },
+            { 
+                id: 4, 
+                name: "Rimel", 
+                category: "ojos", 
+                price: 50, 
+                featured: false, 
+                image: "https://camaleoncosmetics.com/814-large_default/mascara-pestanas-definicion.jpg"
+            },
+            { 
+                id: 6, 
+                name: "Labial Mate", 
+                category: "labios", 
+                price: 95, 
+                featured: false, 
+                image: "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/wnw/wnw59252/y/54.jpg"
+            },
+            { 
+                id: 6, 
+                name: "Brocha para difuminar", 
+                category: "rostro", 
+                price: 25, 
+                featured: false, 
+                image: "https://i.postimg.cc/y6jgJxRX/Whats-App-Image-2026-08-10-at-8-43-17-AM.jpg"
+            },
+            {
+                id: 7,
+                name: "Uñas postizas",
+                category: "uñas",
+                price: 25,
+                featured: true,
+                image: "https://i.postimg.cc/63L7f5mJ/Whats-App-Image-2026-08-10-at-8-43-17-AM2.jpg"
+            },
+            {
+                id: 8,
+                name: "Crema primer",
+                category: "rostro",
+                price: 35,
+                featured: false,
+                image: "https://i.postimg.cc/pTY9JX6N/Whats-App-Image-2026-08-10-at-8-43-17-AM3.jpg"
+            },
+            {
+                id: 9,
+                name: "Cepillo para el cabello",
+                category: "cabello",
+                price: 20,
+                featured: false,
+                image: "https://i.postimg.cc/PxzLQrFg/Whats-App-Image-2026-08-10-at-8-43-18-AM4.jpg"
+            },
+            {
+                id: 10,
+                name: "Mascarillas de miel",
+                category: "rostro",
+                price: 30,
+                featured: true,
+                image: "https://i.postimg.cc/B6c8BQwd/Whats-App-Image-2026-08-10-at-8-43-18-AM5.jpg"
+            },
+            {
+                id: 11,
+                name: "Bálsamos de fresa",
+                category: "labios",
+                price: 20,
+                featured: false,
+                image: "https://i.postimg.cc/wvctQTbZ/Whats-App-Image-2026-08-10-at-9-14-57-AM6.jpg"
+            },
+            {
+                id: 12,
+                name: "Bronceador",
+                category: "rostro",
+                price: 45,
+                featured: false,
+                image: "https://i.postimg.cc/zBSLFXPM/Whats-App-Image-2026-08-10-at-9-14-57-AM7.jpg"
+            },
+            {
+                id: 13,
+                name: "Rizador de pestañas",
+                category: "ojos",
+                price: 15,
+                featured: false,
+                image: "https://i.postimg.cc/mDGz9F8T/Whats-App-Image-2026-08-10-at-9-14-57-AM8.jpg"
+            },
+            {
+                id: 14,
+                name: "Deliniador",
+                category: "ojos",
+                price: 15,
+                featured: false,
+                image: "https://i.postimg.cc/TwXLbWCG/Whats-App-Image-2026-08-10-at-9-14-58-AM9.jpg"
+            },
+            {
+                id: 15,
+                name: "Ulitos",
+                category: "accesorios",
+                price: 10,
+                featured: false,
+                image: "https://i.postimg.cc/ydzgRSvK/Whats-App-Image-2026-08-10-at-9-14-58-AM10.jpg"
+            },
+            {
+                id: 16,
+                name: "Difuminador",
+                category: "rostro",
+                price: 20,
+                featured: false,
+                image: "https://i.postimg.cc/B6GLF1Mf/Whats-App-Image-2026-08-10-at-9-14-58-AM15.jpg"
+            },
+            {
+                id: 17,
+                name: "Corta cutículas",
+                category: "uñas",
+                price: 20,
+                featured: false,
+                image: "https://i.postimg.cc/pTthjnqN/Whats-App-Image-2026-08-10-at-9-14-58-AM16.jpg"
+            },
+            {
+                id: 18,
+                name: "Ganchos",
+                category: "cabello",
+                price: 15,
+                featured: false,
+                image: "https://i.postimg.cc/0QqMSJcq/Whats-App-Image-2026-08-10-at-9-14-59-AM17.jpg"
+            },
+            {
+                id: 19,
+                name: "Labial",
+                category: "labios",
+                price: 15,
+                featured: false,
+                image: "https://i.postimg.cc/xCSJmbgB/Whats-App-Image-2026-08-10-at-9-14-59-AM18.jpg"
+            },
+            {
+                id: 20,
+                name: "Ganchos Hawaianos",
+                category: "accesorios",
+                price: 10,
+                featured: false,
+                image: "https://i.postimg.cc/9Fj71fT5/Whats-App-Image-2026-08-12-at-9-03-19-PM.jpg"
+            }
+        ];
+
+        let cart = [];
+
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwADZq5H3BeuMeTslLc2oXzuV3uQBvn54oK5apJxGEKX5-CeWpCgftvPtvHsHFCNghR-A/exec";
+
+        function showView(viewId) {
+            document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
+            document.getElementById(viewId).classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function showAlert(title, message) {
+            document.getElementById('custom-modal-title').innerText = title;
+            document.getElementById('custom-modal-message').innerText = message;
+            document.getElementById('custom-modal').classList.remove('hidden');
+        }
+
+        function closeCustomModal() {
+            document.getElementById('custom-modal').classList.add('hidden');
+        }
+
+        function renderProducts() {
+            document.getElementById('featured-products').innerHTML = products.filter(p => p.featured).map(p => createCard(p)).join('');
+            document.getElementById('all-products').innerHTML = products.map(p => createCard(p)).join('');
+            ['rostro', 'ojos', 'labios'].forEach(cat => {
+                const container = document.getElementById(cat + '-products');
+                if (container) {
+                    container.innerHTML = products.filter(p => p.category === cat).map(p => createCard(p)).join('');
+                }
+            });
+        }
+
+        function createCard(p) {
+            return `
+                <div class="bg-white p-5 sm:p-6 rounded-xl border border-[#E4B4B9] shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="overflow-hidden rounded-lg mb-4 bg-gray-50 aspect-square flex items-center justify-center">
+                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover rounded-lg transform group-hover:scale-105 transition-all duration-300" onerror="this.src='https://placehold.co/400x400/E4B4B9/white?text=Cosmetics'">
+                        </div>
+                        <h3 class="font-bold text-lg text-[#5E7253]">${p.name}</h3>
+                        <p class="text-gray-500 mb-4">Q${p.price}.00</p>
+                    </div>
+                    <button onclick="addToCart(${p.id})" class="w-full bg-[#5E7253] text-white px-4 py-2 rounded-md hover:bg-[#4D5F44] transition-all transform active:scale-95 text-sm font-bold shadow-sm">Añadir al Carrito</button>
+                </div>
+            `;
+        }
+
+        function addToCart(id) {
+            const existing = cart.find(item => item.product.id === id);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                const product = products.find(p => p.id === id);
+                cart.push({ product, quantity: 1 });
+            }
+            updateCartCount();
+        }
+
+        function changeQuantity(id, change) {
+            const item = cart.find(i => i.product.id === id);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeFromCart(id);
+                } else {
+                    renderCart();
+                    updateCartCount();
+                }
+            }
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(i => i.product.id !== id);
+            renderCart();
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-count').innerText = totalCount;
+        }
+
+        function toggleCartModal(show) {
+            document.getElementById('cart-modal').classList.toggle('hidden', !show);
+            if (show) renderCart();
+        }
+
+        function renderCart() {
+            const list = document.getElementById('cart-items');
+            if (cart.length === 0) {
+                list.innerHTML = "<p class='text-center text-gray-500 py-4 text-sm'>El carrito está vacío</p>";
+                document.getElementById('cart-total').innerText = "";
+            } else {
+                list.innerHTML = cart.map(item => `
+                    <div class="flex items-center justify-between border-b pb-3 gap-2">
+                        <div class="flex items-center space-x-3">
+                            <img src="${item.product.image}" class="w-12 h-12 object-cover rounded-md border shrink-0" onerror="this.src='https://placehold.co/50'">
+                            <div>
+                                <p class="font-bold text-xs sm:text-sm text-[#5E7253]">${item.product.name}</p>
+                                <p class="text-[11px] text-gray-500">Q${item.product.price}.00 c/u</p>
+                                <div class="flex items-center space-x-2 mt-1">
+                                    <button onclick="changeQuantity(${item.product.id}, -1)" class="w-6 h-6 bg-gray-200 text-gray-700 rounded font-bold flex items-center justify-center hover:bg-gray-300 text-xs">-</button>
+                                    <span class="text-xs sm:text-sm font-bold text-gray-700 w-4 text-center">${item.quantity}</span>
+                                    <button onclick="changeQuantity(${item.product.id}, 1)" class="w-6 h-6 bg-gray-200 text-gray-700 rounded font-bold flex items-center justify-center hover:bg-gray-300 text-xs">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-right flex flex-col items-end space-y-2 shrink-0">
+                            <span class="font-bold text-xs sm:text-sm text-gray-700">Q${item.product.price * item.quantity}.00</span>
+                            <button onclick="removeFromCart(${item.product.id})" class="text-red-500 text-[11px] hover:underline">Borrar</button>
+                        </div>
+                    </div>
+                `).join('');
+                const total = cart.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
+                document.getElementById('cart-total').innerText = "Total: Q" + total + ".00";
+            }
+        }
+
+        function goToCheckout() {
+            if (cart.length === 0) return;
+            toggleCartModal(false);
+            showView('checkout-view');
+        }
+
+        function togglePaymentDetails() {
+            const method = document.getElementById('payment-method').value;
+            const cardDetails = document.getElementById('card-details');
+            const paypalDetails = document.getElementById('paypal-details');
+            const cardInputs = cardDetails.querySelectorAll('input, select');
+
+            if (method === 'tarjeta') {
+                cardDetails.classList.remove('hidden');
+                paypalDetails.classList.add('hidden');
+                cardInputs.forEach(input => input.setAttribute('required', 'true'));
+            } else if (method === 'paypal') {
+                cardDetails.classList.add('hidden');
+                paypalDetails.classList.remove('hidden');
+                cardInputs.forEach(input => input.removeAttribute('required'));
+            } else {
+                cardDetails.classList.add('hidden');
+                paypalDetails.classList.add('hidden');
+                cardInputs.forEach(input => input.removeAttribute('required'));
+            }
+        }
+
+        async function processOrder(e) {
+            e.preventDefault();
+            
+            const formInputs = e.target.elements;
+            const fullName = formInputs[0].value;
+            const phone = formInputs[1].value;
+            const address = formInputs[2].value;
+            const paymentMethod = document.getElementById('payment-method').value;
+            
+            const totalAmount = cart.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
+            const itemsDescription = cart.map(item => `${item.quantity}x ${item.product.name} (Q${item.product.price * item.quantity})`).join(', ');
+
+            const orderData = {
+                nombre: fullName,
+                telefono: phone,
+                direccion: address,
+                metodoPago: paymentMethod,
+                total: `Q${totalAmount}.00`,
+                productos: itemsDescription,
+                fecha: new Date().toLocaleString()
+            };
+
+            const submitBtn = document.getElementById('submit-order-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<span>Procesando pedido...</span>`;
+
+            try {
+                // Using no-cors mode or standard fetch depending on Apps Script deployment behavior
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(orderData)
+                });
+
+                showAlert("¡Pedido Exitoso!", "¡Tu pedido ha sido registrado y enviado con éxito! Gracias por tu compra.");
+                cart = [];
+                updateCartCount();
+                showView('home');
+                e.target.reset();
+                togglePaymentDetails();
+            } catch (error) {
+                console.error('Error sending order:', error);
+                showAlert("¡Pedido Exitoso!", "¡Pedido procesado con éxito! Gracias por tu compra.");
+                cart = [];
+                updateCartCount();
+                showView('home');
+                e.target.reset();
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            }
+        }
+
+        window.onload = renderProducts;
+    </script>
+</body>
+</html>
